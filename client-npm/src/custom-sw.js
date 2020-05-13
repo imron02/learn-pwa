@@ -2,6 +2,18 @@
 /* eslint-disable no-undef */
 importScripts('https://storage.googleapis.com/workbox-cdn/releases/5.1.2/workbox-sw.js');
 
+const SW_VERSION = '1.0.1';
+
+addEventListener('message', (event) => {
+  if (event.data.type === 'GET_VERSION') {
+    event.ports[0].postMessage(SW_VERSION);
+  }
+});
+
+workbox.setConfig({
+  debug: true
+});
+
 workbox.core.skipWaiting();
 workbox.core.clientsClaim();
 

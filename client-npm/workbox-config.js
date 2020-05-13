@@ -4,7 +4,5 @@ module.exports = {
     '\*\*/\*.{html,js}'
   ],
   swDest: './build/sw.js',
-  clientsClaim: true,
-  skipWaiting: true,
-  mode: 'debug'
+  swSrc: './src/custom-sw.js'
 };
